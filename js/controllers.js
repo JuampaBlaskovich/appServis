@@ -24,8 +24,8 @@ angular.module('starter.controllers', [])
     $http.post('http://api-geoalquiler.herokuapp.com/login',$scope.user, {withCredentials: true}).then(function(resp) {
         console.log(resp.data);
          var alertPopup = $ionicPopup.alert({
-             title: 'Logeado con exito',
-             template: 'Ingresa ahora'
+             title: 'Lo lograste vieja!',
+             template: 'Pone tu usuario papá'
            });
            alertPopup.then(function(res) {
              $location.path('/app/usuarios');
@@ -34,8 +34,8 @@ angular.module('starter.controllers', [])
     }, function(err) {
       console.error('ERR', err);
       var alertPopup = $ionicPopup.alert({
-             title: 'Error en el ingreso',
-             template: 'Email o contraseña invalido'
+             title: 'Error en logearte',
+             template: 'Email o tu mama es invalida'
            });
            alertPopup.then(function(res) {
              $location.path('/app/entrar');
@@ -250,7 +250,7 @@ angular.module('starter.controllers', [])
       $http.post('http://api-geoalquiler.herokuapp.com/anuncios',$scope.anuncios ).then(function(resp) {
         console.log(resp.data);
          var alertPopup = $ionicPopup.alert({
-             title: 'Anuncio Creado con exito',
+             title: 'Servicio creado y a la vista de todos',
              template: 'Vea su anuncion publicado'
            });
            alertPopup.then(function(res) {
