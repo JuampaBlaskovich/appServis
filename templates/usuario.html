@@ -1,0 +1,34 @@
+<ion-view view-title="Perfil">
+  <ion-content>
+  	<div class="card">
+		<div class="item item-text-wrap">
+			<h1>{{usuario.name}}</h1>
+			<div class="list">
+			  <label class="item item-input">
+			    <input type="text" placeholder="Name" ng-model="usuario.name">
+			  </label>
+			  <label class="item item-input">
+			    <input type="text" placeholder="E-Mail" ng-model="usuario.email">
+			  </label>
+			</div>
+			<button ng-click="doSave()" class="button button-balanced">
+			  Guardar
+			</button>
+			<button ng-click="doDelete()" class="button button-assertive">
+			  Borrar
+			</button>
+		</div>
+	</div>
+  <div class="card">
+  <div class="item item-text-wrap">
+    <h1>Tipo de usuario</h1>
+    <button ng-click="doFree()" value=1 ng-model="usuariotipo.tipo" class="button button-balanced">
+      Free
+    </button>
+    <button ng-click="doPremiun()" value=2 ng-model="usuariotipo.tipo" class="button button-assertive">
+      Premium
+    </button>
+  </div>
+  </div>
+  </ion-content>
+</ion-view>

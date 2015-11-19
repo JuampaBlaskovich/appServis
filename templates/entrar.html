@@ -1,0 +1,32 @@
+<ion-view view-title="Login">
+<ion-content style="background: url(img/login.png) center; background-size: cover;">
+        <div class="hero no-header flat">
+            <div class="content">
+            <img class="logo" src="img/ionic.png">
+                <h2 class="light logofont">ADMINISTRADOR - GEOALQUILER</h2>
+            </div>
+        </div>
+        <div class="list">
+            <form name="myForm" novalidate>
+            <div class="list">
+         <label class="item item-input">
+          <span class="input-label">Email</span>
+            <input type="text" ng-model="user.email">
+          </label>
+         <label class="item item-input">
+            <span class="input-label">Password</span>
+            <input type="password" ng-model="user.password">
+          </label>
+
+        </div>
+
+         <div class="col">
+           <button ng-click="doLogin()" class="item button button-full button-assertive ink">Ingresar</button>
+         </div>
+
+      </form>
+        </div>
+    </ion-content>
+  
+  </ion-content>
+</ion-view>

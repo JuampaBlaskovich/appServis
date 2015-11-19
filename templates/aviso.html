@@ -1,0 +1,27 @@
+<ion-view view-title="Perfil">
+  <ion-content>
+  	<div class="card">
+		<div class="item item-text-wrap">
+			<h1>{{aviso.titulo}}</h1>
+			<div class="list">
+        <label class="item item-input">
+			    <input type="text" placeholder="Titulo" ng-model="aviso.titulo">
+			  </label>
+			  <label class="item item-input">
+			    <input type="text" placeholder="Descripcion" ng-model="aviso.descripcion">
+			  </label>
+			  <label class="item item-input">
+			    <input type="text" placeholder="Precio" ng-model="aviso.precio">
+			  </label>
+			</div>
+			<button ng-click="doSave()" class="button button-balanced">
+			  Guardar
+			</button>
+			<button ng-click="doDelete()" class="button button-assertive">
+			  Borrar
+			</button>
+		</div>
+	</div>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,16 @@
+<ion-view view-title="Anuncios">
+  <ion-content>
+    <label class="item item-input">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input type="search" placeholder="Buscar" ng-model="searchQuery" />
+    </label>
+    <div class="list">
+      <a class="item item-thumbnail-left"  ng-repeat="aviso in avisos | filter:searchQuery" href="#/app/avisos/{{aviso.id}}">
+      <img src="img/prueba1.jpg">
+      <h2>{{aviso.titulo}}</h2>
+      <p>{{aviso.precio}}</p>
+      <p>{{aviso.descripcion}}</p>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

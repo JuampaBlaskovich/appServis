@@ -1,0 +1,14 @@
+<ion-view view-title="Usuarios">
+  <ion-content>
+    <label class="item item-input">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input type="search" placeholder="Buscar" ng-model="searchQuery" />
+    </label>
+
+    <ion-list>
+      <ion-item ng-repeat="usuario in usuarios | filter:searchQuery" href="#/app/usuarios/{{usuario.id}}">
+        {{usuarios.name}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
