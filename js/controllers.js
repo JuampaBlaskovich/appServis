@@ -3,7 +3,7 @@ angular.module('starter.controllers', [])
 .controller('AppCtrl', function($scope, $ionicModal, $timeout, $http, $location) {
 
    $scope.doLogout = function(){
-    $http.get('http://api-geoalquiler.herokuapp.com/logout', {withCredentials: true}).then(function(resp) {
+    $http.get('http://appservis.herokuapp.com/logout', {withCredentials: true}).then(function(resp) {
     $scope.user = resp.data.data;
     $location.path('/app/entrar');
 
@@ -21,7 +21,7 @@ angular.module('starter.controllers', [])
         $scope.user.password =''; 
   
    $scope.doLogin = function() {
-    $http.post('http://api-geoalquiler.herokuapp.com/login',$scope.user, {withCredentials: true}).then(function(resp) {
+    $http.post('http://appservis.herokuapp.com/login',$scope.user, {withCredentials: true}).then(function(resp) {
         console.log(resp.data);
          var alertPopup = $ionicPopup.alert({
              title: 'Lo lograste vieja!',
@@ -49,7 +49,7 @@ angular.module('starter.controllers', [])
 .controller('UsuarioslistsCtrl', function($scope, $http, $location) {
          
      $scope.user = [];
-    $http.get('http://api-geoalquiler.herokuapp.com/index.php/me', {withCredentials: true}).then(function(resp) {
+    $http.get('http://appservis.herokuapp.com/index.php/me', {withCredentials: true}).then(function(resp) {
       $scope.user = resp.data.data;
       console.log('Succes', resp.data.data);
       $location.path('/app/usuarios');
@@ -62,7 +62,7 @@ angular.module('starter.controllers', [])
 
   $scope.usuarios = [];
    $scope.$on('$ionicView.beforeEnter', function() {
-    $http.get('http://api-geoalquiler.herokuapp.com/index.php/usuarios').then(function(resp) {
+    $http.get('http://appservis.herokuapp.com/index.php/usuarios').then(function(resp) {
       $scope.usuarios = resp.data.data;
       console.log('Succes', resp.data.data);
     }, function(err) {
@@ -77,7 +77,7 @@ angular.module('starter.controllers', [])
 
 
   $scope.usuario = {};
-  $http.get('http://api-geoalquiler.herokuapp.com/index.php/usuarios/'+ $stateParams.UsuarioId).then(function(resp) {
+  $http.get('http://appservis.herokuapp.com/index.php/usuarios/'+ $stateParams.UsuarioId).then(function(resp) {
     $scope.usuario = resp.data.data;
   }, function(err) {
     console.error('ERR', err);
@@ -85,7 +85,7 @@ angular.module('starter.controllers', [])
   });
 
   $scope.doSave = function() {
-    $http.put('http://api-geoalquiler.herokuapp.com/index.php/usuarios/'+ $stateParams.UsuarioId, $scope.usuario).then(function(resp) {
+    $http.put('http://appservis.herokuapp.com/index.php/usuarios/'+ $stateParams.UsuarioId, $scope.usuario).then(function(resp) {
       console.log(resp.data);
       $location.path('/app/usuarios');
     }, function(err) {
@@ -96,7 +96,7 @@ angular.module('starter.controllers', [])
   };
 
   $scope.doDelete = function() {
-    $http.delete('http://api-geoalquiler.herokuapp.com/index.php/usuarios/'+ $stateParams.UsuarioId, $scope.usuario).then(function(resp) {
+    $http.delete('http://appservis.herokuapp.com/index.php/usuarios/'+ $stateParams.UsuarioId, $scope.usuario).then(function(resp) {
       console.log(resp.data);
       $location.path('/app/usuarios');
     }, function(err) {
@@ -106,7 +106,7 @@ angular.module('starter.controllers', [])
   };
 
   $scope.doPremiun = function() {
-    $http.put('http://api-geoalquiler.herokuapp.com/index.php/usuariostipo/'+ $stateParams.UsuarioId, $scope.usuariotipo).then(function(resp) {
+    $http.put('http://appservis.herokuapp.com/index.php/usuariostipo/'+ $stateParams.UsuarioId, $scope.usuariotipo).then(function(resp) {
       console.log(resp.data);
       $location.path('/app/usuarios');
     }, function(err) {
@@ -117,7 +117,7 @@ angular.module('starter.controllers', [])
   };
 
   $scope.doFree = function() {
-    $http.put('http://api-geoalquiler.herokuapp.com/index.php/usuariostipo/'+ $stateParams.UsuarioId, $scope.usuariotipo).then(function(resp) {
+    $http.put('http://appservis.herokuapp.com/index.php/usuariostipo/'+ $stateParams.UsuarioId, $scope.usuariotipo).then(function(resp) {
       console.log(resp.data);
       $location.path('/app/usuarios');
     }, function(err) {
@@ -132,7 +132,7 @@ angular.module('starter.controllers', [])
 .controller('NuevoUsuarioCtrl', function($scope, $stateParams, $http, $ionicPopup, $location ) {
     
       $scope.user = [];
-    $http.get('http://api-geoalquiler.herokuapp.com/index.php/me', {withCredentials: true}).then(function(resp) {
+    $http.get('http://appservis.herokuapp.com/index.php/me', {withCredentials: true}).then(function(resp) {
       $scope.user = resp.data.data;
       console.log('Succes', resp.data.data);
       $location.path('/app/nuevousuario');
@@ -149,11 +149,11 @@ angular.module('starter.controllers', [])
         $scope.user.id =''; 
   
    $scope.doRegister = function() {
-      $http.post('http://api-geoalquiler.herokuapp.com/usuarios',$scope.user ).then(function(resp) {
+      $http.post('http://appservis.herokuapp.com/usuarios',$scope.user ).then(function(resp) {
         console.log(resp.data);
          var alertPopup = $ionicPopup.alert({
-             title: 'Usuario Creado con exito',
-             template: 'Ingresa ahora'
+             title: 'Registrado Exitosamente',
+             template: 'Introduzca su Usuario'
            });
            alertPopup.then(function(res) {
              $location.path('/app/usuarios');
@@ -170,7 +170,7 @@ angular.module('starter.controllers', [])
 .controller('AvisoslistsCtrl', function($scope, $http) {
 
    $scope.user = [];
-    $http.get('http://api-geoalquiler.herokuapp.com/index.php/me', {withCredentials: true}).then(function(resp) {
+    $http.get('http://appservis.herokuapp.com/index.php/me', {withCredentials: true}).then(function(resp) {
       $scope.user = resp.data.data;
       console.log('Succes', resp.data.data);
       $location.path('/app/avisos');
@@ -183,7 +183,7 @@ angular.module('starter.controllers', [])
   
   $scope.avisos = [];
    $scope.$on('$ionicView.beforeEnter', function() {
-  $http.get('http://api-geoalquiler.herokuapp.com/index.php/anuncios').then(function(resp) {
+  $http.get('http://appservis.herokuapp.com/index.php/anuncios').then(function(resp) {
     $scope.avisos = resp.data.data;
     console.log('Succes', resp.data.data);
   }, function(err) {
@@ -197,7 +197,7 @@ angular.module('starter.controllers', [])
 
   $scope.aviso = {};
 
-  $http.get('http://api-geoalquiler.herokuapp.com/index.php/anuncios/'+ $stateParams.AvisoId).then(function(resp) {
+  $http.get('http://appservis.herokuapp.com/index.php/anuncios/'+ $stateParams.AvisoId).then(function(resp) {
     $scope.aviso = resp.data.data;
   }, function(err) {
     console.error('ERR', err);
@@ -205,7 +205,7 @@ angular.module('starter.controllers', [])
   });
 
   $scope.doSave = function() {
-    $http.put('http://api-geoalquiler.herokuapp.com/index.php/anuncios/'+ $stateParams.AvisoId, $scope.aviso).then(function(resp) {
+    $http.put('http://appservis.herokuapp.com/index.php/anuncios/'+ $stateParams.AvisoId, $scope.aviso).then(function(resp) {
       console.log(resp.data);
       $location.path('/app/avisos');
     }, function(err) {
@@ -216,7 +216,7 @@ angular.module('starter.controllers', [])
   };
 
    $scope.doDelete = function() {
-    $http.delete('http://api-geoalquiler.herokuapp.com/index.php/anuncios/'+ $stateParams.AvisoId, $scope.aviso).then(function(resp) {
+    $http.delete('http://appservis.herokuapp.com/index.php/anuncios/'+ $stateParams.AvisoId, $scope.aviso).then(function(resp) {
       console.log(resp.data);
       $location.path('/app/avisos');
     }, function(err) {
@@ -231,7 +231,7 @@ angular.module('starter.controllers', [])
 .controller('NuevoAvisoCtrl', function($scope, $stateParams, $http, $ionicPopup, $location ) {
 
     $scope.user = [];
-    $http.get('http://api-geoalquiler.herokuapp.com/index.php/me', {withCredentials: true}).then(function(resp) {
+    $http.get('http://appservis.herokuapp.com/index.php/me', {withCredentials: true}).then(function(resp) {
       $scope.user = resp.data.data;
       console.log('Succes', resp.data.data);
       $location.path('/app/nuevoaviso');
@@ -247,7 +247,7 @@ angular.module('starter.controllers', [])
         $scope.anuncios.precio='';
   
    $scope.doRegister = function() {
-      $http.post('http://api-geoalquiler.herokuapp.com/anuncios',$scope.anuncios ).then(function(resp) {
+      $http.post('http://appservis.herokuapp.com/anuncios',$scope.anuncios ).then(function(resp) {
         console.log(resp.data);
          var alertPopup = $ionicPopup.alert({
              title: 'Servicio creado y a la vista de todos',
