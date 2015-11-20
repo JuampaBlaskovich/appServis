@@ -1,0 +1,42 @@
+
+<ion-view view-title="Nuevo Usuario">
+  <ion-content>
+
+      <div class="menuNuevo">
+          <a href="#/login" class="linkblanco"><div class="ion-arrow-left-a" style="margin-right: 15px; display: inline"></div>Volver</a>
+      </div>
+
+    <div class="list list-inset">
+	    <form name="myForm" novalidate>
+           <div class="list list-inset">
+  		    <label class="item item-input">
+    		    <input name="username" ng-model="user.name" placeholder="Usuario" highlight-color="balanced" type="text" ng-minlength="6"  required>
+  		    </label>
+ 		    <label class="item item-input">
+    		    <input name="email" ng-model="user.email" placeholder="Email" highlight-color="balanced" type="text" ng-minlength="5" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,24})$/" required >
+  		    </label>
+  		    <label class="item item-input">
+   			     <input name="password" ng-model="user.password" placeholder="Clave" highlight-color="energized" type="password" ng-minlength="4" required>
+  		    </label>
+		    </div>
+            <div class="padding">
+                <p ng-show="myForm.username.$error.required">* Introduzca un nombre de usuario.</p>
+                <p ng-show="myForm.username.$error.minlength">* El usuario debe contener al menos 6 letras.</p>
+            
+                <p ng-show="myForm.email.$error.required">* Introduzca un E-Mail</p>
+                <p ng-show="myForm.email.$error.minlength">* El e-mail debe contener al menos 5 letras.</p>
+            
+                <p ng-show="myForm.password.$error.required">* Introduzca una Clave</p>
+                <p ng-show="myForm.password.$error.minlength">* La clave debe contener al menos 4 letras.</p>
+            </div>
+        
+        
+        
+            <div class="padding">
+                <button ng-disabled="myForm.$invalid" ng-click="doRegister()" class="button button-full button-assertive ink">Registrar</button>
+            </div>
+        
+         </form>
+    </div>
+  </ion-content>
+</ion-view>

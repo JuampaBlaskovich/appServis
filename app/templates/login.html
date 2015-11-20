@@ -1,0 +1,36 @@
+<ion-view view-title="Login">
+    <ion-content id="loginform">
+
+        <div class="hero no-header flat">
+            <div class="content">
+            
+                <div class="col col-offset-33">
+                    <img class="logo" src="images/logo.png">
+                </div>
+
+                <h2 id="logo">appServis</h2>
+                <p class="slogan">Sacale probecho a tus mejors habilidades y conocimientos.</p>
+            </div>
+        </div>
+
+        <div class="list list-inset">
+            <form name="myForm" novalidate>
+                <label class="item item-input">
+                    <span class="ion-ios-email" style="padding-right: 15px"></span>
+                    <input type="text" ng-model="user.email" placeholder="E-Mail">
+                </label>
+                <label class="item item-input">
+                    <span class="ion-android-lock" style="padding-right: 15px"></span>
+                    <input type="password" ng-model="user.password" placeholder="Clave">
+                </label>
+            </form>
+        </div>
+
+        <div class="col">
+            <button ng-click="doLogin()" class="button button-block botonLogin">INGRESAR</button>
+        </div>
+
+        <p class="slogan">&iquest;No tienes usuario? <a href="#/nuevousuario" class="linkblanco">Registrate</a>.</p>
+  
+    </ion-content>
+</ion-view>

@@ -14,28 +14,27 @@
 
   <ion-side-menu side="left">
     <ion-header-bar class="bar-stable">
-      <h1 class="title">appServis</h1>
+      <h1 class="title">Menu</h1>
     </ion-header-bar>
     <ion-content>
       <ion-list>
-        <ion-item menu-close href="#/app/entrar">
-          Login
-        </ion-item>
+
         <ion-item menu-close href="#/app/usuarios">
-          Usuarios
+          <div class="ion-person" style="display: inline; margin-right: 10px"></div>Usuarios
         </ion-item>
-        <ion-item menu-close href="#/app/nuevousuario">
-          Registrarse
-        </ion-item>
+
         <ion-item menu-close href="#/app/avisos">
-          Servicios
+            <div class="ion-document-text" style="display: inline; margin-right: 10px"></div>Servicios
         </ion-item>
+
         <ion-item menu-close href="#/app/nuevoaviso">
-          Ofrece tu servicio
+            <div class="ion-ios-plus" style="display: inline; margin-right: 10px"></div>Publicar nuevo Servicio
         </ion-item>
+
         <ion-item menu-close ng-click="doLogout()">
-          Cerrar Sesion
+            <div class="ion-android-cancel" style="display: inline; margin-right: 10px"></div>Cerrar Sesion
         </ion-item>
+
       </ion-list>
     </ion-content>
   </ion-side-menu>

@@ -6,8 +6,8 @@
     </label>
 
     <ion-list>
-      <ion-item ng-repeat="usuario in usuarios | filter:searchQuery" href="#/app/usuarios/{{usuario.id}}">
-        {{usuarios.name}}
+      <ion-item style="color: #333" ng-repeat="usuario in usuarios | filter:searchQuery" href="#/app/usuarios/{{usuario.id}}">
+        {{usuario.name}}
       </ion-item>
     </ion-list>
   </ion-content>
