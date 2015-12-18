@@ -1,0 +1,25 @@
+﻿<ion-view view-title="Nuevo Mensaje">
+    <ion-content>
+        <form name="myForm" novalidate>
+            <div class="list">
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Asunto</span>
+                    <input type="text" name="title" placeholder="Asunto del Mensaje" ng-model="mensaje.asunto">
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Mensaje</span>
+                    <textarea name="descripcion" placeholder="Mensaje..." rows="10" ng-model="mensaje.mensaje"></textarea>
+                </label>
+
+                <div class="col">
+                    <button ng-click="doSend()" class="item button button-block button-positive ink">Enviar</button>
+                </div>
+
+            </div>
+        </form>
+
+    </ion-content>
+</ion-view>
+

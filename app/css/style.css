@@ -1,62 +1,300 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+/*Font*/
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700);
 
-html, body {
-    font-family: 'Open Sans', sans-serif;
+
+html, body, label, button, a{
+    font-family: 'Roboto', sans-serif;
 }
 
-.linkblanco{
+/* Global */
+
+a{
+    text-decoration: none;
+}
+
+.noborder{
+    border: none;
+}
+
+.nicon{
+    margin-right: 8px;
+}
+
+.niconi{
+    margin-left: 8px;
+}
+
+/* Side-Menu */
+
+.menu-container{
+    background-color: white;
+}
+
+.menu-title{
+    font-family: 'Roboto', sans-serif;
     color: white;
+    background-color: #4AA4DF; 
+}
+.menu-icon{
+    display: inline;
+    margin-right: 10px;
 }
 
-.linkblanco:visited{
+.menu-item{
+    outline: none;
+    border: none;
+}
+
+/* Extend Menu */
+
+.menu-header{
     color: white;
+    background-color: #4AA4DF; 
 }
 
-#loginform{
-    background-color: #2895DC;
+.menu-searchbox{
     color: white;
+    padding: 10px;
+    background-color: #4AA4DF; 
 }
 
-#logo {
-	font-family: 'Open Sans', sans-serif;
+.menu-searchbox input{
+    width: 92%;
+    padding: 0 4% 0 4%;
+    background-color: white;
+    border-radius: 3px;
+}
+
+.menu-shadow{
+    box-shadow: 0px 1px 10px rgba(33, 33, 33, 0.3)
+}
+
+/* Lista Anuncios */
+
+.anuncios-filtros{
     text-align: center;
-    font-size: 2em;
-    color: white;
-    font-weight: 800;
 }
 
-.logo {
-    display: block;
-    left: auto;
-    right: auto;
+.anuncios:hover{
+    background-color: #ecf0f1;
+}
+
+.anuncios{
+    padding-bottom: 2px;
+    border-bottom: 0;
+}
+
+
+.anuncios h2{
+    font-size: 20px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.anuncios-title{
+    padding: 8px 0 8px 15px;
+    background-color: #2ecc71;
+}
+
+.anuncios-title h2{
+    color: white;
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+.anuncios-date{
+    text-transform: capitalize;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.anuncios-meta{
+    margin: 0;
+    padding: 10px 0 8px 0;
+    text-align: center;
+}
+
+.anuncios-meta a{
+    text-decoration: none;
+}
+
+.anuncios-meta a:visited{
+    color: inherit;
+}
+
+
+.anuncios-meta p{
+
+}
+
+.anuncios-meta span{
+    margin: 0;
+    padding: 0;
+}
+
+/* Anuncio Individual */
+
+.anuncios-border{
+    border-radius: 7px 7px 0 0;
+}
+
+.anuncio-user{
+    margin: 0;
+    color: #ecf0f1;
+    background-color: #1abc9c;
+}
+
+.anuncio-user p{
+
+    color: inherit;
+}
+
+.anuncio-cal{
+    background-color: #16a085;
+    text-align: center;
+    color: white;
+}
+
+.anuncio-cal p{
+    color: inherit;
+}
+
+
+.anuncio-description{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: white;
+}
+
+.anuncio-description h2{
+    color: #3498db;
+    margin-bottom: 10px;
+}
+
+.anuncio-action{
+    height: 40px;
+    padding: 0;
+    text-align: center;
+    line-height: 30px;
+}
+
+.anuncio-action button{
+    border: none;
+    padding: 5px 0 8px 0;
+    background-color: #ecf0f1;
+}
+
+
+.anuncio-action a{
+    font-size: 14px;
+    text-decoration: none;
+    padding: 5px 0 8px 0;
+    background-color: #ecf0f1;
+}
+
+.anuncio-action a:visited{
+    color: inherit;
+}
+
+/*Login*/
+
+#loginView{
+    background-color: #4AA4DF;
+}
+
+#loginTop {
+    background-color: #F5FDFF;
+}
+
+#loginBottom{
     padding-top: 20px;
 }
 
-.slogan{
-    font-family: 'Open Sans', sans-serif;
+.login-button{
+    opacity: 0.9;
+    color: white;
+    border: 2px solid white;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.login-button:hover{
+    color: white;
+    opacity: 0.4;
+}
+
+.login-button:active{
+    opacity: 0.4;
+}
+
+.login-item{
+    opacity: 0.95;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.login-item input{
+    color: #A4B1C7;
+    height: 30px;
+}
+
+.login-list{
+    background-color: inherit;
+}
+
+.login-text{
+    color: #fbfcfc;
     text-align: center;
-    font-size: 0.8em;
-    color: white;
-    font-weight: 300;
+    font-size: 15px;
 }
 
-/*Sobreescribimos los valores por defecto del bootstrap (Ionic)*/
-.botonLogin{
-    background-color: #0D3C59;
+.login-text a{
+    opacity: 0.8;
     color: white;
-    border: none;
-    outline: none;
+    text-decoration: none;
 }
 
-.botonLogin:hover{
-    background-color: #2980b9;
+.login-text a:visited{
     color: white;
 }
 
-.menuNuevo{
+/*NewUser*/
+
+.newUserMenu{
+    height: 50px;
+    background-color: #4AA4DF;
+    line-height: 50px;
+    color: white;
+    font-size: 17px;
+}
+
+.newUserMenu a{
+    color: white;
+    text-decoration: none;
+}
+
+.newUserMenu a:visited{
+    color: white;
+}
+
+/*Tutorial*/
+
+#tutorialView{
+    background-color: #ecf0f1;
+}
+
+#tutorialView p, h1{
+    color: #ecf0f1;
+}
+
+/*Dashboard*/
+
+.bottomLineCard{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
     width: 100%;
-    background-color: #2895DC;
-    color: white;
-    padding: 10px;
-    font-family: 'Open Sans', sans-serif;
 }

@@ -1,0 +1,39 @@
+<ion-view view-title="Explorar Anuncios" cache-view="false">
+    <ion-content>
+
+
+        <!--Buscador-->
+        <div class="menu-searchbox menu-shadow">
+            <label class="item-input login-item">
+                <i class="nicon ion-search" style="color: #333; margin-right: 5px"></i>
+                <input type="search" placeholder="Buscar" ng-model="searchQuery" />
+            </label>
+        </div>
+
+
+        <!--Listado-->
+        <div class="list" style="border-bottom: 1px;">
+            <a ng-repeat="anuncios in anuncios | filter:searchQuery | orderBy:predicate " href="#/app/anuncio/{{anuncios.id}} ">
+
+                <div class="item anuncios">
+
+                        <div class="row">
+
+                            <div class="col col-75">
+                                <h2>{{anuncios.title}}</h2>
+                                <p><span class="anuncios-date">{{anuncios.descripcion}} </span></p>
+                            </div>
+
+                        </div>
+                </div>
+
+                <div class="row anuncios-meta">
+                    <span class="col col-25" style="color: #3498db;"><i class="ion-eye nicon"></i>{{anuncios.visitas}}</span>
+                    <span class="col col-25" style="color: #e74c3c;"><i class="ion-heart nicon"></i>{{anuncios.favoritos}}</span>
+                    <span class="col col-50" style="color: #e67e22;"><i class="ion-calendar nicon"></i>{{anuncios.created_at}}</span>
+                </div>
+            </a>
+        </div>
+
+    </ion-content>
+</ion-view>

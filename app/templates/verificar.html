@@ -1,0 +1,46 @@
+<ion-view view-title="Verificar E-Mail">
+  <ion-content id="loginView">
+
+    <div class="newUserMenu">
+        <a href="#/login" class="linkblanco"><div class="ion-arrow-left-a" style="margin-left: 15px; display: inline"></div><p style="margin-left: 10px; display: inline">Volver</p></a>
+    </div>
+    
+    <div class="row menu-shadow" id="loginTop">
+        <div class=" col">
+            <div class="col text-center" style="padding-top: 5%">
+
+                <img src="img/email.png" />
+
+            </div>
+        </div>
+    </div>
+
+      <div id="loginBottom">
+          <div class="list list-inset login-list" style="padding: 0 10px 0 10px">
+
+              <div style="text-align: center;">
+                  <p class="login-text">Parece que a&uacute;n no has confirmado tu cuenta. Revis&aacute; tu correo electr&oacute;nico para ver tu c&oacute;digo de confirmaci&oacute;n e introducelo a continuaci&oacute;n:</p>
+                  <br />
+               </div>
+
+              <form name="myForm" novalidate>
+
+                  <label class="login-item item-input">
+                      <span class="ion-checkmark-circled" style="margin: 0 15px 0 0; color: #95a5a6"></span>
+                      <input name="username" ng-model="user.codigo" placeholder="C&oacute;digo de Verificacion" highlight-color="balanced" type="text" maxlength="6">
+                  </label>
+
+                  <div style="margin-top: 20px">
+                      <button ng-click="doVerify()" class="button button-block gradientBG login-button">Verificar</button>
+                  </div>
+
+                  <div style="margin-top: 20px">
+                      <button ng-click="doResend()" class="button button-block gradientBG login-button">Reenviar E-Mail</button>
+                  </div>
+
+              </form>
+          </div>
+        </div>
+
+</ion-content>
+</ion-view>

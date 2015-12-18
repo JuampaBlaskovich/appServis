@@ -1,0 +1,25 @@
+<ion-view view-title="Anuncios Favoritos" cache-view="false">
+    <ion-content>
+
+        <!--Buscador-->
+        <div class="menu-searchbox menu-shadow">
+                <input type="search" placeholder="Buscar" ng-model="searchQuery"/>
+        </div>
+
+        <!--Listado-->
+        <div class="list" style="border-bottom: 1px;">
+            <a ng-repeat="anuncios in anuncios | filter:searchQuery | orderBy:predicate " href="#/app/anuncio/{{anuncios.id}} ">
+
+                <div class="item item-icon-left anuncios" style="padding-bottom: 10px;">
+                    <i class="icon ion-heart" style="color: #e74c3c;"></i>
+                    <div>
+                        <h2>{{anuncios.title}}</h2>
+                        <p><span class="anuncios-date">{{anuncios.descripcion}} </span></p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+
+    </ion-content>
+</ion-view>

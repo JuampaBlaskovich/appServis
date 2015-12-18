@@ -1,0 +1,30 @@
+<ion-view view-title="Mensajes" cache-view="false">
+    <ion-content>
+
+        <!--Buscador-->
+        <div class="menu-searchbox menu-shadow">
+                <input type="search" placeholder="Buscar" ng-model="searchQuery"/>
+        </div>
+
+        <!--Listado-->
+        <div class="list" style="border-bottom: 1px;">
+
+            <a ng-repeat="mensajes in mensajes | filter:searchQuery" href="#/app/mensaje/{{mensajes.id}}">
+
+                <div class="item item-icon-left anuncios" style="padding-bottom: 10px;">
+                    
+                     <i class="icon ion-email" style="color: #3498db;"></i>
+
+                    <div>
+                        <p><span class="anuncios-date">De: {{mensajes.name}} </span></p>
+                        <p><span class="anuncios-date">Fecha del mensaje: {{mensajes.created_at}} </span></p>
+
+                        <h2 style="color: #27ae60; display: inline">{{mensajes.asunto}}</h2>
+                    </div>
+
+                </div>
+            </a>
+
+        </div>
+</ion-content>
+</ion-view>

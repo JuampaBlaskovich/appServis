@@ -1,0 +1,37 @@
+<ion-view view-title="Detalles del Anuncio" cache-view="false">
+    <ion-content>
+
+        <div class="list" style="padding: 0">
+
+            <!--Usuario-->
+            <div class="item noborder anuncio-user">
+                <h1>{{usuario.name}}</h1>
+                <p>Fecha del Aviso: {{anuncio.created_at}}</p>
+            </div>
+
+            <!--Calificaciones-->
+            <div class="row item noborder anuncio-cal">
+                <div class="col col-50"><i class="ion-eye nicon"></i>{{anuncio.visitas}}</div>
+                <div class="col col-50"><i class="ion-heart nicon"></i>{{anuncio.favoritos}}</div>
+            </div>
+
+            <!--Descripcion-->
+            <div class="item item-text-wrap noborder anuncio-description">
+                <h2>{{anuncio.title}}</h2>
+                <p>{{anuncio.descripcion}}</p>
+            </div>
+
+            <!--Acciones-->
+            <div class="row item noborder anuncio-action">
+
+                <a class="col" href="#/app/crearmensaje/{{usuario.id}}" style="color: #3498db"><i class="ion-chatbubble nicon"></i>Contactar</a>
+
+                <button class="col" ng-click="doFavorito()"  style="color: #e74c3c;"><i class="ion-heart nicon"></i>{{anuncio.esfavmsg}}</button>
+            </div>
+
+            <div class="row item noborder anuncio-action">
+                <button class="col {{esAdmin()}}" style="background-color: #FC6042; color: white;" ng-click="doBorrar()"><i class="ion-close-round nicon"></i>Borrar</button>
+            </div>
+
+    </ion-content>
+</ion-view>

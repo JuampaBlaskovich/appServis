@@ -1,36 +1,40 @@
-<ion-view view-title="Login">
-    <ion-content id="loginform">
+<ion-view view-title="Login" can-swipe-back="false">
+    <ion-content id="loginView">
 
-        <div class="hero no-header flat">
-            <div class="content">
-            
-                <div class="col col-offset-33">
-                    <img class="logo" src="images/logo.png">
+        <div class="row menu-shadow" id="loginTop">
+            <div class=" col">
+                <div class="col text-center" style="padding-top: 5%">
+
+                    <img src="img/logologin.png" />
+
                 </div>
-
-                <h2 id="logo">appServis</h2>
-                <p class="slogan">Sacale probecho a tus mejors habilidades y conocimientos.</p>
             </div>
         </div>
+        
+        <div id="loginBottom">
 
-        <div class="list list-inset">
-            <form name="myForm" novalidate>
-                <label class="item item-input">
-                    <span class="ion-ios-email" style="padding-right: 15px"></span>
-                    <input type="text" ng-model="user.email" placeholder="E-Mail">
-                </label>
-                <label class="item item-input">
-                    <span class="ion-android-lock" style="padding-right: 15px"></span>
-                    <input type="password" ng-model="user.password" placeholder="Clave">
-                </label>
-            </form>
+            <div class="list list-inset login-list" style="padding: 0 10px 0 10px;">
+                <form name="loginForm" novalidate>
+                    <label class="item-input login-item">
+                        <span class="ion-email" style="margin: 0 15px 0 0; color: #95a5a6"></span>
+                        <input type="text" ng-model="user.email" placeholder="E-Mail">
+                    </label>
+                    <br />
+                    <label class="item-input login-item">
+                        <span class="ion-android-lock" style="margin: 0 15px 0 0; color: #95a5a6"></span>
+                        <input type="password" ng-model="user.password" placeholder="Clave">
+                    </label>
+                </form>
+
+                <div style="margin-top: 20px">
+                    <button ng-click="doLogin()" class="item-input button button-block login-button">Ingresar</button>
+                </div>
+            </div>
+
+            <p class="login-text"><a href="#/nuevousuario">&iquest;No est&aacute;s registrado?</a></p>
         </div>
 
-        <div class="col">
-            <button ng-click="doLogin()" class="button button-block botonLogin">INGRESAR</button>
-        </div>
 
-        <p class="slogan">&iquest;No tienes usuario? <a href="#/nuevousuario" class="linkblanco">Registrate</a>.</p>
-  
-    </ion-content>
+
+</ion-content>
 </ion-view>

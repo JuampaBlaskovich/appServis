@@ -10,11 +10,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
-    if (window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-      cordova.plugins.Keyboard.disableScroll(true);
 
-    }
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
@@ -22,21 +18,30 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
-  $stateProvider
-    
-    .state('login', {
-            url: '/login',
-            templateUrl: 'templates/login.html',
-            controller: 'LoginCtrl'
+.config(function ($stateProvider, $urlRouterProvider) {
+
+    $stateProvider
+	
+    //App sin Menu:
+	.state('login', {
+		url: '/login',
+		templateUrl: 'templates/login.html',
+		controller: 'LoginCtrl'
+	})
+
+    .state('newuser', {
+      	url: '/nuevousuario',
+      	templateUrl: 'templates/nuevousuario.html',
+      	controller: 'NewUserCtrl'
     })
 
-    .state('nuevousuario', {
-          url: '/nuevousuario',
-          templateUrl: 'templates/nuevousuario.html',
-           controller: 'NuevoUsuarioCtrl'
-      })
-
+    .state('verifyaccount', {
+        url: '/verifyaccount',
+        templateUrl: 'templates/verificar.html',
+        controller: 'VerifyAccCtrl'
+    })
+	
+     //App Con menu:
     .state('app', {
     url: '/app',
     abstract: true,
@@ -44,55 +49,86 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     controller: 'AppCtrl'
   })
 
-    .state('app.usuarios', {
-      url: '/usuarios',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/usuarios.html',
-          controller: 'UsuarioslistsCtrl'
+      .state('app.anuncios', {
+        url: '/anuncios',
+        views: {
+          'menuContent': {
+              templateUrl: 'templates/anuncios.html',
+              controller: 'AnunciosCtrl'
+          }
         }
-      }
+      })
+
+    .state('app.anuncio', {
+        url: '/anuncio/:IdAnuncio',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/anuncio.html',
+                controller: 'AnuncioCtrl'
+            }
+        }
     })
 
-  .state('app.usuario', {
-    url: '/usuarios/:UsuarioId',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/usuario.html',
-        controller: 'UsuarioCtrl'
-      }
-    }
-  })
-
-  .state('app.avisos', {
-    url: '/avisos',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/avisos.html',
-        controller: 'AvisoslistsCtrl'
-      }
-    }
-  })
-  .state('app.aviso', {
-    url: '/avisos/:AvisoId',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/aviso.html',
-        controller: 'AvisoCtrl'
-      }
-    }
-  })
-  
- .state('app.nuevoaviso', {
-      url: '/nuevoaviso',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/nuevoaviso.html',
-          controller: 'NuevoAvisoCtrl'
+    .state('app.crearanuncio', {
+        url: '/crearanuncio',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/crearanuncio.html',
+                controller: 'CrearAnuncioCtrl'
+            }
         }
-      }
-    }) ;
+    })
 
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/login');
+    .state('app.favoritos', {
+        url: '/favoritos',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/favoritos.html',
+                controller: 'FavoritosCtrl'
+            }
+        }
+    })
+
+    .state('app.mensajes', {
+        url: '/mensajes',
+        views: {
+            'menuContent': {
+            templateUrl: 'templates/mensajes.html',
+            controller: 'MensajesCtrl'
+            }
+        }
+    })
+
+    .state('app.mensaje', {
+        url: '/mensaje/:IdMensaje',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/mensaje.html',
+                controller: 'MensajeCtrl'
+            }
+        }
+    })
+
+    .state('app.crearmensaje', {
+            url: '/crearmensaje/:IdUsuario',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/crearmensaje.html',
+                    controller: 'CrearMensajeCtrl'
+                }
+            }
+    })
+
+    .state('app.perfil', {
+        url: '/perfil',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/perfil.html',
+                controller: 'InvitarCtrl'
+            }
+        }
+    });
+
+      // if none of the above states are matched, use this as the fallback
+      $urlRouterProvider.otherwise('/login');
 });

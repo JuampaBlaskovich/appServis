@@ -1,0 +1,31 @@
+﻿<ion-view view-title="Mensaje">
+    <ion-content>
+
+        <div class="list" style="border-bottom: 1px;">
+
+                <div class="item anuncios" style="padding-bottom: 10px;">
+                    <div>
+                        <p><span class="anuncios-date">De: {{mensaje.name}} </span></p>
+                        <p><span class="anuncios-date">Fecha del mensaje: {{mensaje.created_at}} </span></p>
+                        <br />
+                        <h2 style="color: #27ae60; display: inline">{{mensaje.asunto}}</h2>
+                        <br /><br />
+
+                        <p>{{mensaje.msj}} </p>
+                        <br /><br />
+                    </div>
+
+                </div>
+
+                <div class="row item noborder anuncio-action">
+
+                    <a class="col" href="#/app/crearmensaje/{{mensaje.from}}" style="background-color: #3498db; color: white;"><i class="ion-chatbubble nicon"></i>Responder</a>
+
+                    <button class="col" style="background-color: #FC6042; color: white;" ng-click="doBorrar()"><i class="ion-close-round nicon"></i>Borrar</button>
+                </div>
+
+        </div>
+
+    </ion-content>
+</ion-view>
+
